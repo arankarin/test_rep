@@ -15,13 +15,14 @@ def dijkstra_algo(g: nx.DiGraph, starting_node: Hashable) -> Mapping[Hashable, U
 
 def dfs_find(graph, src, dst, visited):
 	visited[src] = True
+	#print(visited)
 	if src == dst:
 		return True
-
 
 	for node in graph.adj[src]:
 		if not visited[node]:
 			if dfs_find(graph, node, dst, visited):
+				print(visited)
 				return True
 
 	return False
@@ -39,12 +40,13 @@ if __name__ == "__main__":
 			("B", "E"),
 			("C", "F"),
 			("E", "G"),
+			("Q", "W"),
 		]
 	)
 
 	graph.add_node('Z')
 	src = "A"
-	dst = "Z"
+	dst = "F"
 	visited = {node: False for node in graph.nodes()}
 	# for node in graph.adj:
 	# 	print(node, graph.adj[node])
