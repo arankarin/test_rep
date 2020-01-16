@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 
 orders = [
-    (9, 12),
+    (9, 12),nx.draw_networkx_nodes(graph, pos)
     (10, 12)
 ]
 
@@ -13,7 +13,7 @@ def plot(graph):
 
     nx.draw_networkx_nodes(graph, pos)
     nx.draw_networkx_edges(graph, pos)
-    nx.draw_networkx_labels(graph, pos, labels)
+    nx.draw_networkx_labels(graph, pos, labels, front_size = 16)
 
 if __name__ == "__main__":
     graph = nx.MultiDiGraph()
