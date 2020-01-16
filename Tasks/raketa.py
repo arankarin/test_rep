@@ -16,7 +16,7 @@ def plot(graph):
     nx.draw_networkx_labels(graph, pos, labels)
 
 if __name__ == "__main__":
-    graph = nx.Graph()
+    graph = nx.MultiDiGraph()
     graph.add_nodes_from(range(0,23))
     #graph.add_edge((9, 10))
     for order in orders:
@@ -24,4 +24,5 @@ if __name__ == "__main__":
             graph.add_edge(i, i + 1)
 
     plot(graph)
-    print(graph.degree)
+    for d in graph.out_degree:
+        print(d)
