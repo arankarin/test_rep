@@ -51,12 +51,13 @@ if __name__ == "__main__":
 			("B", "E"),
 			("C", "F"),
 			("E", "G"),
+			("D", "F"),
 			("Q", "W"),
 
 		]
 	)
 
 	src = "B"
-	dst = "W"
+	dst = "F"
 
 	print(bfs_find(graph, src,dst))
