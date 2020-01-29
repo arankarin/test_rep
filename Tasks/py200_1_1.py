@@ -74,11 +74,12 @@ print('---' * 10)
 
 class GlassDefaultListArg:
     def __init__(self, capacity_volume):
+        self.capacity_volume = capacity_volume
         self.occupied_volume = []
-        self.occupied_volume.append(capacity_volume)
+        self.occupied_volume = self.occupied_volume.append(2)
 
     def __str__(self):  # Строка для вывода на экран (для пользователя)
-        return f'Занятый объем: {self.occupied_volume}'
+        return f'Занятый объем: {self.occupied_volume}\n Налили: {self.capacity_volume}'
 
 glass4 = GlassDefaultArg(3)
 glass4
