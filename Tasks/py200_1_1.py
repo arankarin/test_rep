@@ -14,7 +14,7 @@
 # 1. Создайте класс Glass с атрибутами capacity_volume и occupied_volume
 #    Обязательно проверяйте типы (TypeError) и значения переменных (ValueError)
 
-class Glass():
+class Glass:
     """Класс Glass атрибутами capacity_volume и occupied_volume"""
 
     def __init__(self):
@@ -43,7 +43,7 @@ print('----' * 10)
 #    По умолчанию occupied_volume равен нулю. Создайте два объекта с 0 и 200
 #    Обязательно проверяйте типы (TypeError) и значения переменных (ValueError)
 
-class GlassDefaultArg():
+class GlassDefaultArg:
     def __init__(self, occupied_volume=0):
         # raise TypeError
         self.occupied_volume = occupied_volume
@@ -66,7 +66,7 @@ print('----q' * 10)
 #    Создавайте объект GlassDefaultListArg только с одним аргументом capacity_volume.
 #    Опишите результат.
 #    Подсказка: можно ли использовать для аргументов по умолчанию изменяемые типы?
-class GlassDefaultListArg():
+class GlassDefaultListArg:
     def __init__(self, capacity_volume, occupied_volume=[]):
         self.capacity_volume = capacity_volume
         self.occupied_volume = occupied_volume.append(2)
@@ -87,8 +87,9 @@ print('----' * 10)
 #    Убедитесь, что методы правильно изменяют атрибут occupied_volume.
 
 
-class GlassAddRemove():
+class GlassAddRemove:
     def __init__(self):
+
         self.capacity_volume = 500  # объем емкости
         self.occupied_volume = 0  # занятый объем
 
@@ -127,8 +128,10 @@ print('----' * 10)
 glass2 = GlassAddRemove()
 glass3 = GlassAddRemove()
 print(dir(GlassAddRemove))
+print(dir(glass1))
 print(dir(glass2))
-
+print(dir(glass3))
+print('----' * 10)
 # ---------------------------------------------------------------------------------------------
 # Внутренние объекты класса (стр. 25-33)
 
@@ -136,10 +139,16 @@ print(dir(glass2))
 #    в середине __init__ и в конце __init__, (стр. 28-30)
 #    а также после создания объекта.
 #    Опишите результат.
+print(glass1.__dict__)
 
 
+print('----' * 10)
 # 8. Создайте три объекта Glass. (стр. 27)
 #    Получите id для каждого объекта с соответсвующим id переменной self.
+
+print(id(glass1.occupied_volume))
+print(id(glass2.occupied_volume))
+print(id(glass3.occupied_volume))
 
 
 print('!----!----' * 10)
@@ -150,24 +159,34 @@ print('!----!----' * 10)
 #     - соглашения о стиле кодирования
 #    Запустите код.
 
-class d:
+class d: # Класс с верхнего регистра
     def __init__(f, a=2):
         f.a = a
 
-    def print_me(p):
+    def print_me(p): # необхлдимо def print_me(f)
         print(p.a)
 
 
 d.print_me(d())
 
+print('!----!----' * 10)
 
 # 10. Исправьте
 class A:
     def __init__(self, a):
         if 10 < a < 50:
+            print('+3 =')
+            self.a = a
+            self.a += 3
             return
-        self.a = a;
+        self.a = a
 
+    def __str__(self):
+        return f' значение {self.a}'
+
+
+a = A(12)
+print(a)
 
 # Объясните так реализовывать __init__ нельзя?
 
